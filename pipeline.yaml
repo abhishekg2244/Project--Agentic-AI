@@ -1,0 +1,11 @@
+trigger:
+- main
+
+stages:
+- stage: Monitor
+  jobs:
+  - job: CheckPod
+    steps:
+    - script: |
+        python agent.py
+      displayName: "Run Agentic AI Fix"
