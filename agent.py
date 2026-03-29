@@ -1,10 +1,10 @@
 from langchain.agents import initialize_agent, Tool
-from langchain.llms import OpenAI
+from langchain_community.llms import Ollama
 
 from tools.k8s_logs import get_pod_logs
 from tools.k8s_fix import fix_pod_issue
 
-llm = OpenAI(api_key="YOUR_API_KEY")
+llm = Ollama(model="llama3")
 
 tools = [
     Tool(name="Logs", func=get_pod_logs, description="Get pod logs"),
